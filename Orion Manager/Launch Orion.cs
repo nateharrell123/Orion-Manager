@@ -1,19 +1,14 @@
 ﻿using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace Orion_Manager
 {
+    /// <summary>
+    /// For all your organizational needs!
+    /// </summary>
     public partial class MyOrion : Form
     {
         public MyOrion()
@@ -41,7 +36,7 @@ namespace Orion_Manager
         /// <param name="e"></param>
         void formClose(object sender, FormClosedEventArgs e)
         {
-            // TODO: close driver when form close
+            // TODO: close driver when form closes
         }
 
 
@@ -57,14 +52,18 @@ namespace Orion_Manager
             this.tableAdapterManager.UpdateAll(this.orion_DatabaseDataSet);
         }
 
+        /// <summary>
+        /// Fills dataset upon startup.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            // This line of code loads data into the 'orion_DatabaseDataSet.Table' table.
             this.tableTableAdapter.Fill(this.orion_DatabaseDataSet.Table);
         }
 
         /// <summary>
-        /// Launches Orion based on IP.
+        /// Launches Orion based on selected IP.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
