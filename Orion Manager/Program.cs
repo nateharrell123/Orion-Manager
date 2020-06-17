@@ -16,7 +16,7 @@ namespace Orion_Manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MyOrion());
+            Application.Run(new OrionManager());
         }
     }
 }

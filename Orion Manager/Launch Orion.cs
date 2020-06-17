@@ -9,9 +9,9 @@ namespace Orion_Manager
     /// <summary>
     /// For all your organizational needs!
     /// </summary>
-    public partial class MyOrion : Form
+    public partial class OrionManager : Form
     {
-        public MyOrion()
+        public OrionManager()
         {
             Thread thread = new Thread(new ThreadStart(StartScreen));
             thread.Start();
