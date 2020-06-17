@@ -110,7 +110,7 @@
             this.tableBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tableBindingNavigator.Name = "tableBindingNavigator";
             this.tableBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tableBindingNavigator.Size = new System.Drawing.Size(662, 25);
+            this.tableBindingNavigator.Size = new System.Drawing.Size(661, 25);
             this.tableBindingNavigator.TabIndex = 0;
             this.tableBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -166,7 +166,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -239,7 +238,7 @@
             this.uxDataTable.Location = new System.Drawing.Point(12, 76);
             this.uxDataTable.Name = "uxDataTable";
             this.uxDataTable.ShowCellToolTips = false;
-            this.uxDataTable.Size = new System.Drawing.Size(638, 656);
+            this.uxDataTable.Size = new System.Drawing.Size(638, 501);
             this.uxDataTable.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -273,7 +272,7 @@
             // 
             this.uxLaunchOrion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.uxLaunchOrion.Font = new System.Drawing.Font("Microsoft YaHei Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxLaunchOrion.Location = new System.Drawing.Point(12, 742);
+            this.uxLaunchOrion.Location = new System.Drawing.Point(12, 583);
             this.uxLaunchOrion.Name = "uxLaunchOrion";
             this.uxLaunchOrion.Size = new System.Drawing.Size(638, 61);
             this.uxLaunchOrion.TabIndex = 2;
@@ -285,18 +284,19 @@
             // 
             this.uxOrionLabel.AutoSize = true;
             this.uxOrionLabel.Font = new System.Drawing.Font("Microsoft YaHei Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uxOrionLabel.Location = new System.Drawing.Point(105, 25);
+            this.uxOrionLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.uxOrionLabel.Location = new System.Drawing.Point(116, 25);
             this.uxOrionLabel.Name = "uxOrionLabel";
-            this.uxOrionLabel.Size = new System.Drawing.Size(455, 48);
+            this.uxOrionLabel.Size = new System.Drawing.Size(452, 48);
             this.uxOrionLabel.TabIndex = 3;
-            this.uxOrionLabel.Text = "NovaTech Orion Launcher";
+            this.uxOrionLabel.Text = "NovaTech Orion Manager";
             // 
             // MyOrion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(662, 815);
+            this.ClientSize = new System.Drawing.Size(661, 656);
             this.Controls.Add(this.uxOrionLabel);
             this.Controls.Add(this.uxLaunchOrion);
             this.Controls.Add(this.uxDataTable);
@@ -304,6 +304,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "MyOrion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyOrion";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.orion_DatabaseDataSet)).EndInit();

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,16 @@ namespace Orion_Manager
     {
         public MyOrion()
         {
+            Thread thread = new Thread(new ThreadStart(StartScreen));
+            thread.Start();
+            Thread.Sleep(1500);
             InitializeComponent();
+            thread.Abort();
+        }
+
+        public void StartScreen()
+        {
+            Application.Run(new Startup_Screen());
         }
 
         /// <summary>
@@ -45,8 +55,10 @@ namespace Orion_Manager
         /// <param name="e"></param>
         private void uxLaunchOrion_Click(object sender, EventArgs e)
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AcceptInsecureCertificates = true; // For untrusted certificates
+            ChromeOptions options = new ChromeOptions
+            {
+                AcceptInsecureCertificates = true // For untrusted certificates
+            };
 
             if (uxDataTable.CurrentCell == null) return; 
 
@@ -58,8 +70,7 @@ namespace Orion_Manager
                 driver.Url = $"https://{selectedCell}";
                 return;
             }
- 
-            else MessageBox.Show("You can launch an Orion by selecting the IP address, then clicking 'Launch Orion.'", ":(");
+            else MessageBox.Show("You can launch an Orion by selecting the IP address, then click 'Launch Orion.'", ":(");
         }
     }
 }
