@@ -23,12 +23,27 @@ namespace Orion_Manager
             Thread.Sleep(1500);
             InitializeComponent();
             thread.Abort();
-        }
 
+            // this.FormClosed += new FormClosedEventHandler(formClose);
+        }
+        /// <summary>
+        /// Splash Screen
+        /// </summary>
         public void StartScreen()
         {
             Application.Run(new Startup_Screen());
         }
+
+        /// <summary>
+        /// Cleaning up when form is closed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void formClose(object sender, FormClosedEventArgs e)
+        {
+            // TODO: close driver when form close
+        }
+
 
         /// <summary>
         /// For Table Binding Navigator
@@ -68,7 +83,6 @@ namespace Orion_Manager
             {
                 var driver = new ChromeDriver(options);
                 driver.Url = $"https://{selectedCell}";
-                return;
             }
             else MessageBox.Show("You can launch an Orion by selecting the IP address, then click 'Launch Orion.'", ":(");
         }
