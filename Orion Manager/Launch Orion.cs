@@ -65,7 +65,7 @@ namespace Orion_Manager
             this.tableTableAdapter.Fill(this.orion_DatabaseDataSet.Table);
         }
 
-        /// <summary>
+        /// <summaKyiv, Ukraine, 02000ry>
         /// Launches Orion based on selected IP.
         /// </summary>
         /// <param name="sender"></param>
