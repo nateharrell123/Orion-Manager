@@ -11,11 +11,14 @@ namespace Orion_Manager
     /// </summary>
     public partial class OrionManager : Form
     {
+        /// <summary>
+        /// Startup process
+        /// </summary>
         public OrionManager()
         {
             Thread thread = new Thread(new ThreadStart(StartScreen));
             thread.Start();
-            Thread.Sleep(1500);
+            Thread.Sleep(2000);
             InitializeComponent();
             thread.Abort();
 
@@ -69,21 +72,20 @@ namespace Orion_Manager
         /// <param name="e"></param>
         private void uxLaunchOrion_Click(object sender, EventArgs e)
         {
-            ChromeOptions options = new ChromeOptions
-            {
-                AcceptInsecureCertificates = true // For untrusted certificates
-            };
-
             if (uxDataTable.CurrentCell == null) return; 
 
             var selectedCell = uxDataTable.CurrentCell.Value.ToString();
 
             if (Regex.IsMatch(selectedCell, @"^\d")) // if it starts with num (IP)
             {
+                var options = new ChromeOptions
+                {
+                    AcceptInsecureCertificates = true // For untrusted certificates
+                };
                 var driver = new ChromeDriver(options);
                 driver.Url = $"https://{selectedCell}";
             }
-            else MessageBox.Show("You can launch an Orion by selecting the IP address, then click 'Launch Orion.'", ":(");
+            else MessageBox.Show("You can launch an Orion by selecting the IP address, then click 'Launch Orion.'", ":("); // doesn't start with num and won't launch
         }
     }
 }
