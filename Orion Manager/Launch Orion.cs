@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -65,14 +66,14 @@ namespace Orion_Manager
             this.tableTableAdapter.Fill(this.orion_DatabaseDataSet.Table);
         }
 
-        /// <summaKyiv, Ukraine, 02000ry>
+        /// <summaKyiv, Ukraine, 02000ry> idk how this got here???
         /// Launches Orion based on selected IP.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void uxLaunchOrion_Click(object sender, EventArgs e)
         {
-            if (uxDataTable.CurrentCell == null) return; 
+            if (uxDataTable.CurrentCell == null) return;
 
             var selectedCell = uxDataTable.CurrentCell.Value.ToString();
 
@@ -84,8 +85,21 @@ namespace Orion_Manager
                 };
                 var driver = new ChromeDriver(options);
                 driver.Url = $"https://{selectedCell}";
+                Login(driver, "novatech", "novatech");
             }
             else MessageBox.Show("You can launch an Orion by selecting the IP address, then click 'Launch Orion.'", ":("); // doesn't start with num and won't launch
+        }
+
+        /// <summary>
+        /// Logs into Orion.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        void Login(ChromeDriver driver, string username, string password)
+        {
+            driver.FindElementById("username").SendKeys(username);
+            driver.FindElementById("password").SendKeys(password);
+            driver.FindElementByXPath("/html/body/div[2]/form/div/div[8]/input").Click();
         }
     }
 }

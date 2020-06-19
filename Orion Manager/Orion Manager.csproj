@@ -15,7 +15,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\Nate.Harrell\Desktop\Deploy\</PublishUrl>
+    <PublishUrl>C:\Users\Nate.Harrell\Desktop\IP Manager %28v1%29\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\localhost\\Users\Nate.Harrell\Desktop\Deploy\</InstallUrl>
-    <ApplicationRevision>4</ApplicationRevision>
+    <InstallUrl>\\localhost\Users\Nate.Harrell\Desktop\IP Manager %28v1%29\</InstallUrl>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -52,10 +52,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F28A89FA2C03407D8BD3AF4448B066BA8802F6BB</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E36758416D446E57AEA21FA45A3E04AAFFBA9F68</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Orion Manager_TemporaryKey.pfx</ManifestKeyFile>
@@ -121,6 +121,7 @@
     <EmbeddedResource Include="Startup Screen.resx">
       <DependentUpon>Startup Screen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Orion Manager_TemporaryKey.pfx" />
     <None Include="Orion_DatabaseDataSet.xsc">
       <DependentUpon>Orion_DatabaseDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -171,6 +172,11 @@
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2012 Express LocalDB</ProductName>
+      <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
