@@ -22,7 +22,6 @@ namespace Orion_Manager
             Thread.Sleep(2000);
             InitializeComponent();
             thread.Abort();
-
             // this.FormClosed += new FormClosedEventHandler(formClose);
         }
         /// <summary>
